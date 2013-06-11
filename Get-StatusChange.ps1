@@ -2,7 +2,9 @@ param(
 	[string] $Computername = $(Read-Host "Computername")
 )
 
-. $PWD\NetHelper.ps1; 
+$spath = split-path $SCRIPT:MyInvocation.MyCommand.Path -parent
+
+. $spath\NetHelper.ps1; 
 
 $ping = Set-Pinged $Computername;
 $newping = Set-Pinged $Computername; 

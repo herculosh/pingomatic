@@ -110,3 +110,48 @@ Function Global:PingStatus ($Hostname)
 				} 
 
 
+Function Global:GetStatusString ($pingstatuscode, $primaryaddressresolutionstatus) 
+{ 
+
+	Switch ($pingstatuscode) 
+	{ 
+		0 { $Reason = "Success"} 
+		11001 { $Reason = "Buffer Too Small"} 
+		11002 { $Reason = "Destination Net Unreachable" } 
+		11003 { $Reason = "Destination Host Unreachable" } 
+		11004 { $Reason = "Destination Protocol Unreachable" } 
+		11005 { $Reason = "Destination Port Unreachable "} 
+		11006 { $Reason = "No Resources"} 
+		11007 { $Reason = "Bad Option" } 
+		11008 { $Reason = "Hardware Error"} 
+		11009 { $Reason = "Packet Too Big" } 
+		11010 { $Reason = "Request Timed Out "} 
+		11011 { $Reason = "Bad Request" } 
+		11012 { $Reason = "Bad Route" } 
+		11013 { $Reason = "TimeToLive Expired Transit" } 
+		11014 { $Reason = "TimeToLive Expired Reassembly"} 
+		11015 { $Reason = "Parameter Problem" } 
+		11016 { $Reason = "Source Quench" } 
+		11017 { $Reason = "Option Too Big" } 
+		11018 { $Reason = "Bad Destination"} 
+		11032 { $Reason = "Negotiating IPSEC" } 
+		11050 { $Reason = "General Failure" } 
+		""      { $reason = "Not Resolved"} 
+		default { $Reason = "Unknown"} 
+
+	} 
+	return $reason
+} 
+
+function MakePingTable($array)
+{
+
+	$out = new-object psobject
+
+	foreach($item in $mycollection)
+	{
+		$out | add-member noteproperty Servername $item
+	}
+
+
+}
