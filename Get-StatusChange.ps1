@@ -14,7 +14,7 @@ while(1)
 
 		if($ping.Result -ne $newping.Result)
 		{
-			write-host ("{0} " -f (Get-Date).ToString("dd.mm.yyyy hh:mm:ss")) -nonewline
+			write-host ("{0} " -f (Get-Date).ToString("dd.MM.yyyy hh:mm:ss")) -nonewline
 			if($newping.Result -eq 0)
 			{
 				write-host ('Status on {1} Changed to {0}' -f $newping.Status, $Computername) -f green
