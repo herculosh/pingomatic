@@ -9,7 +9,7 @@ Status Change
 
 Get-StatusChange can ping a single Computer and show his status. 
 
-![Screenshot for Get-StatusChange](https://github.com/immothep/pingomatic/raw/master/pics/Get-PingStatus.png)
+![Screenshot for Get-StatusChange](https://github.com/immothep/pingomatic/raw/master/pics/Get-StatusChange.png)
 
 ```powershell
 .\Get-StatusChange.ps1 -Computername SRVFANTA
@@ -22,6 +22,8 @@ Get-StatusChange can ping a single Computer and show his status.
 
 Ping Status
 ===========
+
+![Screenshot for Get-PingStatus](https://github.com/immothep/pingomatic/raw/master/pics/Get-PingStatus.png)
 
 Get-PingStatus can ping a bunch of computers from a textfile. 
 
